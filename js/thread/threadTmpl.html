@@ -1,0 +1,30 @@
+<div class="threadDetails" style="border: 1px solid black; padding: 10px; margin: 10px; width: 25%; float: left;">
+  <p>
+    <u>Thread details: </u>
+  </p>
+  <h3>{{threadDetails.name}}</h3>
+  <p>
+    {{threadDetails.description}}
+  </p>
+  <h5>Owner: {{threadDetails.owner}}</h5>
+  <button ng-click="deleteThread(id)">Delete Thread</button>
+</div>
+<div class="messages" style="float: left; width: 40%;">
+  <p>
+    <b>Messages:</b>
+  </p>
+  <div ng-repeat="message in threadMessages | orderBy: '-timestamp'" class="messageBox" style="border: 1px solid black; margin: 10px auto; width: 75%; padding: 10px;">
+    <p>
+      {{message.message}}
+    </p>
+    <h5>-{{message.author}} on {{message.timestamp}}</h5>
+  </div>
+</div>
+<div class="newMessageBox" style="border: 1px solid black; float: right; padding: 10px;">
+  <p>
+    Write new message:
+  </p>
+  <textarea ng-model="newMsg.message" placeholder="Message"></textarea>
+  <input ng-model="newMsg.author" type="text" placeholder="Your Name">
+  <button ng-click="addMessage(id, newMsg)" type="button" name="button">Write</button>
+</div>

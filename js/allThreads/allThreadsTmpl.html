@@ -1,0 +1,20 @@
+<h4>All Threads Route/ Home</h4>
+
+<div class="newThreadForm" style="border: 1px solid black; width: 30%; height: 150px; padding-left: 20px;">
+  <p>
+    Create new thread:
+  </p>
+  <input ng-model="newThread.name" type="text" placeholder="Thread Title">
+  <input ng-model="newThread.owner" type="text" placeholder="Your Username"><br><br>
+  <textarea ng-model="newThread.description" placeholder="Description"></textarea>
+  <button ng-click="addNewThread(newThread)" type="button">Create</button>
+</div>
+
+<h4>Current Threads:</h4>
+<div ng-repeat="thread in threads" class="threadBox" style="border: 1px solid black; float: left; margin: 10px; width: 20%;">
+  <p ng-repeat="(key, value) in thread">
+    <b>{{key}}: </b> {{value}}
+  </p>
+  <a ui-sref="thread({id: thread.$id})">Go to thread</a>
+
+</div>
