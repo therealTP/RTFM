@@ -1,4 +1,5 @@
 <div class="threadDetails" style="border: 1px solid black; padding: 10px; margin: 10px; width: 25%; float: left;">
+  <a ui-sref="allThreads">HOME</a>
   <p>
     <u>Thread details: </u>
   </p>
@@ -25,6 +26,6 @@
     Write new message:
   </p>
   <textarea ng-model="newMsg.message" placeholder="Message"></textarea>
-  <input ng-model="newMsg.author" type="text" placeholder="Your Name">
+  <!-- <input ng-model="newMsg.author" type="text" placeholder="Your Name"> -->
   <button ng-click="addMessage(id, newMsg)" type="button" name="button">Write</button>
 </div>

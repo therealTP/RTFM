@@ -1,0 +1,9 @@
+<div class="signUpForm" style="border: 1px solid black; width: 40%; margin: 10px auto; padding: 10px;">
+  <p>
+    Sign up for the app below, or <a ui-sref="login">Login</a>::
+  </p>
+  <input ng-model="user.email" type="text" placeholder="Enter email...">
+  <input ng-model="user.password" type="password" placeholder="Enter password...">
+  <button ng-click="register(user)">Register</button>
+  <h6>{{responseMsg}}</h6>
+</div>

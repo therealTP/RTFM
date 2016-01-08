@@ -31,8 +31,6 @@ rtfmApp.service('threadsSvc', function($firebaseObject, $firebaseArray, baseUrl)
   this.addMessage = function(threadId, msgObj) {
     var msgRef = new Firebase(baseUrl + '/messages/' + threadId);
     var msgs = $firebaseArray(msgRef);
-    // msgObj.timestamp = new Date();
-    // console.log(msgObj);
     return msgs.$add(msgObj);
   };
 });

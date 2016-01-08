@@ -1,0 +1,8 @@
+<div class="loginForm" style="border: 1px solid black; width: 40%; margin: 10px auto; padding: 10px;">
+  <p>
+    Log in to the app below, or <a ui-sref="signup">Sign Up</a>:
+  </p>
+  <input ng-model="user.email" type="text" placeholder="Enter email...">
+  <input ng-model="user.password" type="password" placeholder="Enter password...">
+  <button ng-click="login(user)">Login</button>
+</div>

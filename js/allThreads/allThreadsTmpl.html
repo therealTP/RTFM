@@ -1,11 +1,17 @@
 <h4>All Threads Route/ Home</h4>
-
+<p>
+  Logged in as {{currUser}}
+</p>
+<div class="linkMenu">
+  <a ui-sref="allThreads">Home</a>
+  <button ng-click="logout()">Logout</a>
+</div>
 <div class="newThreadForm" style="border: 1px solid black; width: 30%; height: 150px; padding-left: 20px;">
   <p>
     Create new thread:
   </p>
   <input ng-model="newThread.name" type="text" placeholder="Thread Title">
-  <input ng-model="newThread.owner" type="text" placeholder="Your Username"><br><br>
+  <!-- <input ng-model="newThread.owner" type="text" placeholder="Your Username"><br><br> -->
   <textarea ng-model="newThread.description" placeholder="Description"></textarea>
   <button ng-click="addNewThread(newThread)" type="button">Create</button>
 </div>

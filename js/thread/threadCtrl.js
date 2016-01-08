@@ -1,4 +1,4 @@
-rtfmApp.controller('threadCtrl', function($scope, $state, $stateParams, threadsSvc) {
+rtfmApp.controller('threadCtrl', function($scope, $state, $stateParams, threadsSvc, auth) {
   $scope.test = "ThreadCTRL connected.";
   $scope.id = $stateParams.id;
   $scope.threadDetails = threadsSvc.getOneThread($scope.id);
@@ -15,6 +15,7 @@ rtfmApp.controller('threadCtrl', function($scope, $state, $stateParams, threadsS
   $scope.newMsg = {}; // blank for now
   $scope.addMessage = function(threadId, msgObj) {
     msgObj.timestamp = new Date().toString(); // add timestamp to object
+    msgObj.author = localStorage.currUser;
     threadsSvc.addMessage(threadId, msgObj)
     .then(
       function(response) {
